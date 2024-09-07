@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resume Maker - Personal Info</title>
+</head>
+<body>
+   <div class="container">
+    <h1>Resume Maker</h1>
+
+    <section class="personal information">
+        <h2>Personal Information</h2>
+
+        <label for="profile-picture">Upload Profile Picture:</label>
+        <input type="file" id="profile-picture" accept="image/*">
+        <div id="profile-picture-preview">
+            <img id="preview-img" src="" alt="Profile Picture Preview" style="display: none; max-width: 150px; max-height: 150px;">
+        </div>
+ 
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your Fullname">
+ 
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" placeholder="Enter your Email Address">
+ 
+        <label for="number">Contact Number:</label>
+        <input type="number" id="number" placeholder="Enter your Contact Number">
+ 
+        <label for="city">Select Your City:</label>
+        <div>
+            <input type="radio" id="karachi" name="city" value="Karachi">
+            <label for="karachi">Karachi</label>
+        </div>
+        <div>
+            <input type="radio" id="lahore" name="city" value="Lahore">
+            <label for="lahore">Lahore</label>
+        </div>
+        <div>
+            <input type="radio" id="islamabad" name="city" value="Islamabad">
+            <label for="islamabad">Islamabad</label>
+        </div>
+        <div>
+            <input type="radio" id="punjab" name="city" value="Punjab">
+            <label for="punjab">Punjab</label>
+        </div>
+    </section>
+   </div>
+
+   <button onclick="nextpage()">Next: Enter Skills</button>
+
+    <script src="app.js"></script>
+</body>
+</html>
