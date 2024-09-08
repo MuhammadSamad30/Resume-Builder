@@ -1,71 +1,58 @@
-const previewProfilePicture = (): void => {
-  const fileInput = document.querySelector(
-    "#profile-picture"
-  ) as HTMLInputElement;
-  const previewImg = document.querySelector("#preview-img") as HTMLImageElement;
+// app.ts
 
-  const file = fileInput.files?.[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      previewImg.src = e.target?.result as string;
-      previewImg.style.display = "block";
-    };
-    reader.readAsDataURL(file);
-  }
-};
-document
-  .querySelector("#profile-picture")
-  ?.addEventListener("change", previewProfilePicture);
+function toggleSkills(): void {
+  const skillsContent = document.getElementById('skills-content') as HTMLElement;
+  const toggleButton = document.querySelector('.toggle-button') as HTMLButtonElement;
 
-// skills toggle
-
-function nextpage(): void {
-  window.location.href = "skills.html";
-}
-
-function toggleSkill() {
-  const skillSection = document.getElementById("skills-section") as HTMLElement;
-
-  if (skillSection.style.display === "none") {
-    skillSection.style.display = "block";
+  if (skillsContent.style.display === 'none') {
+      skillsContent.style.display = 'block';
+      toggleButton.textContent = 'Hide Skills';
   } else {
-    skillSection.style.display = "none";
+      skillsContent.style.display = 'none';
+      toggleButton.textContent = 'Show Skills';
   }
 }
 
-//  Edu toggle
+function generateResume(): void {
+    const name = (document.getElementById('name') as HTMLInputElement).value;
+    const email = (document.getElementById('email') as HTMLInputElement).value;
+    const number = (document.getElementById('number') as HTMLInputElement).value;
 
-function nextpage1(): void {
-  window.location.href = "edu.html";
-}
+    const cityElement = document.querySelector('input[name="city"]:checked') as HTMLInputElement | null;
+    const city = cityElement ? cityElement.value : '';
 
-function toggleEdu() {
-  const eduSection = document.getElementById(
-    "education-section"
-  ) as HTMLElement;
+    const skills = (document.getElementById('Skills') as HTMLInputElement).value;
+    const degree = (document.getElementById('degree') as HTMLInputElement).value;
+    const university = (document.getElementById('university') as HTMLInputElement).value;
+    const graduationDate = (document.getElementById('graduation-date') as HTMLInputElement).value;
+    const jobTitle = (document.getElementById('job-title') as HTMLInputElement).value;
+    const companyName = (document.getElementById('company-name') as HTMLInputElement).value;
+    const startDate = (document.getElementById('start-date') as HTMLInputElement).value;
+    const endDate = (document.getElementById('end-date') as HTMLInputElement).value;
 
-  if (eduSection.style.display === "none") {
-    eduSection.style.display = "block";
-  } else {
-    eduSection.style.display = "none";
-  }
-}
+    const resumeContent = `
+        <h1>Resume</h1>
+        <h2>Personal Information</h2>
+        <p><strong>Full Name:</strong> ${name}</p>
+        <p><strong>Email Address:</strong> ${email}</p>
+        <p><strong>Contact Number:</strong> ${number}</p>
+        <p><strong>City:</strong> ${city}</p>
 
-// work toggle
+        <h2>Skills</h2>
+        <p>${skills}</p>
 
-function nextpage2(): void {
-  window.location.href = "work.html";
-}
+        <h2>Education</h2>
+        <p><strong>Degree:</strong> ${degree}</p>
+        <p><strong>University:</strong> ${university}</p>
+        <p><strong>Graduation Date:</strong> ${graduationDate}</p>
 
-function togglework() {
-  const workSection = document.getElementById(
-    "work-experience-section"
-  ) as HTMLElement;
+        <h2>Work Experience</h2>
+        <p><strong>Job Title:</strong> ${jobTitle}</p>
+        <p><strong>Company Name:</strong> ${companyName}</p>
+        <p><strong>Start Date:</strong> ${startDate}</p>
+        <p><strong>End Date:</strong> ${endDate}</p>
+    `;
 
-  if (workSection.style.display === "none") {
-    workSection.style.display = "block";
-  } else {
-    workSection.style.display = "none";
-  }
+    alert("Resume Generated! Check the console for detailed content.");
+    console.log(resumeContent);
 }

@@ -3,11 +3,21 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-.container {
-    max-width: 800px;
-    margin: 40px auto;
+.container-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.container-info, .container-skills, .container-edu, .container-work {
+    margin: 20px 0;
     padding: 20px;
     background-color: white;
     border-radius: 8px;
@@ -37,7 +47,7 @@ label {
     font-size: 1rem;
 }
 
-input[type="text"], input[type="email"], input[type="number"] {
+input[type="text"], input[type="email"], input[type="number"], input[type="date"] {
     width: 100%;
     padding: 12px;
     margin-top: 5px;
@@ -76,24 +86,36 @@ button:hover {
     background-color: #45a049;
 }
 
-#education-section,
-#work-experience-section,
-#skills-section {
-    margin-left: 5px;
+.toggle-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
-/* Responsive */
+.toggle-button:hover {
+    background-color: #ddd;
+}
+
+/* Responsive design */
 @media (max-width: 600px) {
-    .container {
+    .container-info, .container-skills, .container-edu, .container-work {
         padding: 15px;
-        margin: 20px;
+        margin: 10px 0;
     }
 
     h1 {
         font-size: 2rem;
     }
 
-    button {
+    button, .toggle-button {
         font-size: 1rem;
         padding: 10px;
     }
