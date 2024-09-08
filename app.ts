@@ -1,5 +1,3 @@
-// app.ts
-
 function toggleSkills(): void {
   const skillsContent = document.getElementById('skills-content') as HTMLElement;
   const toggleButton = document.querySelector('.toggle-button') as HTMLButtonElement;
