@@ -5,7 +5,7 @@ function toggleSkills(): void {
   if (skillsContent.style.display === 'none') {
       skillsContent.style.display = 'block';
       toggleButton.textContent = 'Hide Skills';
-  } else {
+  } else {     
       skillsContent.style.display = 'none';
       toggleButton.textContent = 'Show Skills';
   }
