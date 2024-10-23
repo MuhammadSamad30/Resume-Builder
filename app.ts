@@ -1,3 +1,5 @@
+// app.ts
+
 function toggleSkills(): void {
   const skillsContent = document.getElementById('skills-content') as HTMLElement;
   const toggleButton = document.querySelector('.toggle-button') as HTMLButtonElement;
@@ -5,7 +7,7 @@ function toggleSkills(): void {
   if (skillsContent.style.display === 'none') {
       skillsContent.style.display = 'block';
       toggleButton.textContent = 'Hide Skills';
-  } else {     
+  } else {
       skillsContent.style.display = 'none';
       toggleButton.textContent = 'Show Skills';
   }

@@ -13,12 +13,6 @@
 
             <section class="personal information">
                 <h2>Personal Information</h2>
-
-                <label for="profile-picture">Upload Profile Picture:</label>
-                <input type="file" id="profile-picture" accept="image/*">
-                <div id="profile-picture-preview">
-                    <img id="preview-img" src="" alt="Profile Picture Preview" style="display: none; max-width: 150px; max-height: 150px;">
-                </div>
         
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" placeholder="Enter your Fullname">
@@ -56,7 +50,7 @@
                     <label for="Skills">List Your Skills:</label>
                     <input type="text" id="Skills" placeholder="Enter your skills separated by commas">
                 </div>
-                <button class="toggle-button" onclick="toggleSkills()">Hide Skills</button>
+                <button onclick="toggleSkills()">Hide Skills</button>
             </section>
         </div>
 
@@ -91,9 +85,26 @@
             </section>
         </div>
 
-        <button onclick="generateResume()">Generate Resume</button>
+        <button onclick="generateResume()">GENERATE</button>
     </div>
 
     <script src="app.js"></script>
 </body>
 </html>
+
+<!-- /* Responsive design */ -->
+<!-- @media (max-width: 600px) {
+    .container-info, .container-skills, .container-edu, .container-work {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    button, .toggle-button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+} -->

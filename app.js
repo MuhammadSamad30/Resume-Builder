@@ -10,7 +10,7 @@ function toggleSkills() {
     else {
         skillsContent.style.display = 'none';
         toggleButton.textContent = 'Show Skills';
-    }
+     }
 }
 function generateResume() {
     const name = document.getElementById('name').value;
